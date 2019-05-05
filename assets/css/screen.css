@@ -1,0 +1,454 @@
+/*
+	@mixin Transit:
+	
+	@version: 2017-31-05
+	@param: Hover state as map of property-value pairs
+	@output: Hover state and transition CSS
+*/
+
+/*
+$background: #e94f40;
+$foreground: #321502;
+$input-background: #ffecdb;
+*/
+
+/* line 4, assets/scss/base.scss */
+
+*,
+* * {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* line 11, assets/scss/base.scss */
+
+body {
+    font-size: 62.5%;
+}
+
+/* line 14, assets/scss/base.scss */
+
+body {
+    background-color: #fafafa;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* line 22, assets/scss/base.scss */
+
+body > .container {
+    padding: 10px;
+}
+
+/* line 26, assets/scss/base.scss */
+
+h1,
+h2 {
+    font-weight: 700;
+}
+
+/* line 29, assets/scss/base.scss */
+
+h1 {
+    font-size: 3em;
+}
+
+/* line 33, assets/scss/base.scss */
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+/* line 37, assets/scss/base.scss */
+
+p {
+    font-size: 1.8em;
+}
+
+/* line 40, assets/scss/base.scss */
+
+label {
+    font-size: 2em;
+}
+
+/* line 43, assets/scss/base.scss */
+
+label,
+legend {
+    margin-bottom: 2px;
+    text-align: left;
+    display: block;
+}
+
+/* line 49, assets/scss/base.scss */
+
+legend {
+    font-size: 2.2em;
+}
+
+/* line 52, assets/scss/base.scss */
+
+fieldset {
+    border: none;
+}
+
+/* line 55, assets/scss/base.scss */
+
+input {
+    font-family: "Lato", sans-serif;
+    border: none;
+    background: none;
+    -webkit-box-shadow: 0px 0px 0px 0px;
+    -moz-box-shadow: 0px 0px 0px 0px;
+    box-shadow: 0px 0px 0px 0px;
+    font-size: 2em;
+    height: auto;
+    border: 2px solid #102542;
+    width: auto;
+    color: #102542;
+    background-color: #fafafa;
+    border-radius: 3px;
+    margin-bottom: 0px;
+    padding: 15px;
+    border-right-width: 0;
+    outline: 2px transparent dashed;
+    transition: border .3s ease, outline .3s ease;
+    outline-offset: 5px;
+}
+
+/* line 71, assets/scss/base.scss */
+
+input[type="number"] {
+    outline-offset: -8px;
+    -moz-appearance: textfield;
+}
+
+/* line 74, assets/scss/base.scss */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* line 86, assets/scss/base.scss */
+
+input:focus {
+    outline: 2px #686963 dashed;
+}
+
+/*Input and button styles*/
+
+/* line 95, assets/scss/base.scss */
+
+button {
+    background: none;
+    border: none;
+    background-color: #CDFDFB;
+    color: #102542;
+    padding: 15px;
+    font-size: 2em;
+    border-radius: 3px;
+    border: 2px solid #102542;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* line 39, assets/scss/const/_mixins.scss */
+
+button:focus,
+button:hover {
+ /* "whatever" is interpolation: otherwise it will assign 
+			value to the SASS variable and not output anything */
+    background-color: #102542;
+    color: #CDFDFB;
+}
+
+/* line 108, assets/scss/base.scss */
+
+button.beep {
+    margin-bottom: 2px;
+}
+
+/* line 112, assets/scss/base.scss */
+
+#clear {
+    visibility: hidden;
+}
+
+/* line 114, assets/scss/base.scss */
+
+#clear.show {
+    visibility: visible;
+}
+
+/* line 118, assets/scss/base.scss */
+
+#timer {
+ /*Main container box*/
+    text-align: center;
+    margin: 0 auto;
+    background-color: #CDFDFB;
+    padding: 20px;
+    color: #102542;
+    border-radius: 3px;
+    max-width: 768px;
+}
+
+/* line 129, assets/scss/base.scss */
+
+#count {
+ /*Holds countdown clock*/
+    font-size: 60px;
+    font-family: "Lato", sans-serif;
+}
+
+/* line 135, assets/scss/base.scss */
+
+.hide {
+    display: none;
+}
+
+/* line 139, assets/scss/base.scss */
+
+.timeholder {
+    line-height: 80px;
+}
+
+/* line 146, assets/scss/base.scss */
+
+#timelabel {
+    font-size: 50px;
+    font-family: "Lato", sans-serif;
+}
+
+/* line 152, assets/scss/base.scss */
+
+.container {
+    width: 100%;
+}
+
+/* line 155, assets/scss/base.scss */
+
+.row {
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* line 167, assets/scss/base.scss */
+
+.row.hide {
+    display: none;
+}
+
+/* line 171, assets/scss/base.scss */
+
+.row-eq-height {
+ /*
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:				 inline-flex;
+*/
+    width: 100%;
+}
+
+/* line 186, assets/scss/base.scss */
+
+.vh {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* line 194, assets/scss/base.scss */
+
+.settings {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* line 198, assets/scss/base.scss */
+
+.settings .column {
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+/* line 211, assets/scss/base.scss */
+
+.settings .column .container {
+    display: table;
+    width: 100%;
+}
+
+/* line 220, assets/scss/base.scss */
+
+.settings .other-controls .container {
+    margin-bottom: 20px;
+}
+
+/* line 223, assets/scss/base.scss */
+
+.settings .other-controls .container:last-child {
+    margin-bottom: 0;
+}
+
+/* line 234, assets/scss/base.scss */
+
+.settings .length-control .wrap {
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+    table-layout: fixed;
+}
+
+/* line 240, assets/scss/base.scss */
+
+.settings .length-control input {
+    width: 100%;
+}
+
+/* line 243, assets/scss/base.scss */
+
+.settings .length-control .cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* line 247, assets/scss/base.scss */
+
+.settings .length-control input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* line 252, assets/scss/base.scss */
+
+.settings .length-control .buttons {
+    width: 20%;
+}
+
+/* line 255, assets/scss/base.scss */
+
+.settings .length-control button {
+    line-height: 1;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding: 2px;
+}
+
+/* line 261, assets/scss/base.scss */
+
+.settings .length-control button:first-child {
+    padding-bottom: 5px;
+    border-bottom-width: 1px;
+    border-bottom-right-radius: 0;
+}
+
+/* line 269, assets/scss/base.scss */
+
+.settings .length-control button:last-child {
+    padding-top: 4px;
+    border-top-width: 1px;
+    border-top-right-radius: 0;
+}
+
+/*Text appears if value is too high or low*/
+
+/* line 282, assets/scss/base.scss */
+
+#sTxt {
+    display: none;
+}
+
+/* line 286, assets/scss/base.scss */
+
+#bTxt {
+    display: none;
+}
+
+/* line 291, assets/scss/base.scss */
+
+#progress {
+ /*contains play/pause button, countdown, and text*/ /*
+	border:solid;
+	border-radius:10px;
+	border-color:#FFFFFF;
+*/
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+/*Progress bar pieces*/
+
+/* line 303, assets/scss/base.scss */
+
+#perc {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* line 310, assets/scss/base.scss */
+
+#empty {
+    background-color: #fafafa;
+    height: 40px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* line 318, assets/scss/base.scss */
+
+#bar {
+    background-color: #C13833;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    width: 0;
+    max-width: 836px;
+    position: absolute;
+    z-index: 2;
+    transition: width 1s linear;
+}
+
+/** http://getbootstrap.com.vn/examples/equal-height-columns/*/
+
+@media (min-width: 588px) {
+
+/* line 159, assets/scss/base.scss */
+
+    .row .column {
+        display: table-cell;
+        width: 50%;
+    }
+
+/* line 198, assets/scss/base.scss */
+
+    .settings .column {
+        margin-bottom: 0;
+        border-right: 10px solid transparent;
+    }
+
+/* line 206, assets/scss/base.scss */
+
+    .settings .column:last-child {
+        border-right-width: 0;
+        border-left: 10px solid transparent;
+    }
+}
+

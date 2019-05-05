@@ -1,0 +1,48 @@
+/*
+	@mixin Transit:
+	
+	@version: 2017-31-05
+	@param: Hover state as map of property-value pairs
+	@output: Hover state and transition CSS
+*/
+@mixin transit($args) {
+	// Create and set variables we'll need in the loop
+	$len: length(map_keys($args));
+	$i: 0;
+	$values: "";
+	
+	// Loop through each pair in map
+	@each $prop, $val in $args {
+		// Append each transition value to string
+	$values: $values + $prop + " 0.3s";
+		
+		// Include comma unless this is the last one
+		@if ($i < ($len - 1 )) {
+		 $values:	$values + ", "
+		}
+	 
+		$i: $i + 1;
+
+
+	}
+	
+	// Output transition and value without quotation marks
+	transition: unquote($values);
+
+
+ @include hover($args);
+}
+
+
+@mixin hover($args) {
+	// Hover state
+		&:focus,
+		&:hover {
+		// Output each declaration
+		/* "#{whatever}" is interpolation: otherwise it will assign 
+			value to the SASS variable and not output anything */
+		@each $prop, $val in $args {
+			 #{$prop}: $val;
+		}
+	}
+}
