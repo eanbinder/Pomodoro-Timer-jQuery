@@ -3,7 +3,7 @@ pom = {
 	// Whether the timer is currently paused
 	isPaused: true,
 	// Whether to override break/session length and just use 6 and 8 seconds respectively
-	isTestMode: true,
+	isTestMode: false,
 	// Break and session length
 	breakLength: 5,
 	sessionLength: 25,
