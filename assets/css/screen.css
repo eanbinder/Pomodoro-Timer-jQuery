@@ -91,15 +91,16 @@ legend {
 
 legend {
     font-size: 2.2em;
+    font-weight: 700;
 }
 
-/* line 52, assets/scss/base.scss */
+/* line 53, assets/scss/base.scss */
 
 fieldset {
     border: none;
 }
 
-/* line 55, assets/scss/base.scss */
+/* line 56, assets/scss/base.scss */
 
 input {
     font-family: "Lato", sans-serif;
@@ -123,14 +124,14 @@ input {
     outline-offset: 5px;
 }
 
-/* line 71, assets/scss/base.scss */
+/* line 72, assets/scss/base.scss */
 
 input[type="number"] {
     outline-offset: -8px;
     -moz-appearance: textfield;
 }
 
-/* line 74, assets/scss/base.scss */
+/* line 75, assets/scss/base.scss */
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -138,7 +139,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-/* line 86, assets/scss/base.scss */
+/* line 87, assets/scss/base.scss */
 
 input:focus {
     outline: 2px #686963 dashed;
@@ -146,7 +147,7 @@ input:focus {
 
 /*Input and button styles*/
 
-/* line 95, assets/scss/base.scss */
+/* line 96, assets/scss/base.scss */
 
 button {
     background: none;
@@ -170,25 +171,25 @@ button:hover {
     color: #CDFDFB;
 }
 
-/* line 108, assets/scss/base.scss */
+/* line 109, assets/scss/base.scss */
 
 button.beep {
     margin-bottom: 2px;
 }
 
-/* line 112, assets/scss/base.scss */
+/* line 113, assets/scss/base.scss */
 
 #clear {
     visibility: hidden;
 }
 
-/* line 114, assets/scss/base.scss */
+/* line 115, assets/scss/base.scss */
 
 #clear.show {
     visibility: visible;
 }
 
-/* line 118, assets/scss/base.scss */
+/* line 119, assets/scss/base.scss */
 
 #timer {
  /*Main container box*/
@@ -201,7 +202,7 @@ button.beep {
     max-width: 768px;
 }
 
-/* line 129, assets/scss/base.scss */
+/* line 130, assets/scss/base.scss */
 
 #count {
  /*Holds countdown clock*/
@@ -209,32 +210,32 @@ button.beep {
     font-family: "Lato", sans-serif;
 }
 
-/* line 135, assets/scss/base.scss */
+/* line 136, assets/scss/base.scss */
 
 .hide {
     display: none;
 }
 
-/* line 139, assets/scss/base.scss */
+/* line 140, assets/scss/base.scss */
 
 .timeholder {
     line-height: 80px;
 }
 
-/* line 146, assets/scss/base.scss */
+/* line 147, assets/scss/base.scss */
 
 #timelabel {
-    font-size: 50px;
+    font-size: 5em;
     font-family: "Lato", sans-serif;
 }
 
-/* line 152, assets/scss/base.scss */
+/* line 153, assets/scss/base.scss */
 
 .container {
     width: 100%;
 }
 
-/* line 155, assets/scss/base.scss */
+/* line 156, assets/scss/base.scss */
 
 .row {
     display: table;
@@ -242,13 +243,13 @@ button.beep {
     margin-bottom: 20px;
 }
 
-/* line 167, assets/scss/base.scss */
+/* line 168, assets/scss/base.scss */
 
 .row.hide {
     display: none;
 }
 
-/* line 171, assets/scss/base.scss */
+/* line 172, assets/scss/base.scss */
 
 .row-eq-height {
  /*
@@ -260,7 +261,7 @@ button.beep {
     width: 100%;
 }
 
-/* line 186, assets/scss/base.scss */
+/* line 187, assets/scss/base.scss */
 
 .vh {
     position: absolute;
@@ -271,40 +272,40 @@ button.beep {
     overflow: hidden;
 }
 
-/* line 194, assets/scss/base.scss */
+/* line 195, assets/scss/base.scss */
 
 .settings {
     margin-top: 20px;
     text-align: left;
 }
 
-/* line 198, assets/scss/base.scss */
+/* line 199, assets/scss/base.scss */
 
 .settings .column {
     vertical-align: top;
     margin-bottom: 20px;
 }
 
-/* line 211, assets/scss/base.scss */
+/* line 212, assets/scss/base.scss */
 
 .settings .column .container {
     display: table;
     width: 100%;
 }
 
-/* line 220, assets/scss/base.scss */
+/* line 221, assets/scss/base.scss */
 
 .settings .other-controls .container {
     margin-bottom: 20px;
 }
 
-/* line 223, assets/scss/base.scss */
+/* line 224, assets/scss/base.scss */
 
 .settings .other-controls .container:last-child {
     margin-bottom: 0;
 }
 
-/* line 234, assets/scss/base.scss */
+/* line 235, assets/scss/base.scss */
 
 .settings .length-control .wrap {
     display: table;
@@ -313,33 +314,33 @@ button.beep {
     table-layout: fixed;
 }
 
-/* line 240, assets/scss/base.scss */
+/* line 241, assets/scss/base.scss */
 
 .settings .length-control input {
     width: 100%;
 }
 
-/* line 243, assets/scss/base.scss */
+/* line 244, assets/scss/base.scss */
 
 .settings .length-control .cell {
     display: table-cell;
     vertical-align: middle;
 }
 
-/* line 247, assets/scss/base.scss */
+/* line 248, assets/scss/base.scss */
 
 .settings .length-control input {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-/* line 252, assets/scss/base.scss */
+/* line 253, assets/scss/base.scss */
 
 .settings .length-control .buttons {
     width: 20%;
 }
 
-/* line 255, assets/scss/base.scss */
+/* line 256, assets/scss/base.scss */
 
 .settings .length-control button {
     line-height: 1;
@@ -349,7 +350,7 @@ button.beep {
     padding: 2px;
 }
 
-/* line 261, assets/scss/base.scss */
+/* line 262, assets/scss/base.scss */
 
 .settings .length-control button:first-child {
     padding-bottom: 5px;
@@ -357,7 +358,7 @@ button.beep {
     border-bottom-right-radius: 0;
 }
 
-/* line 269, assets/scss/base.scss */
+/* line 270, assets/scss/base.scss */
 
 .settings .length-control button:last-child {
     padding-top: 4px;
@@ -369,17 +370,23 @@ button.beep {
 
 /* line 282, assets/scss/base.scss */
 
+.help-text {
+    padding-top: 2px;
+}
+
+/* line 285, assets/scss/base.scss */
+
 #sTxt {
     display: none;
 }
 
-/* line 286, assets/scss/base.scss */
+/* line 289, assets/scss/base.scss */
 
 #bTxt {
     display: none;
 }
 
-/* line 291, assets/scss/base.scss */
+/* line 294, assets/scss/base.scss */
 
 #progress {
  /*contains play/pause button, countdown, and text*/ /*
@@ -393,7 +400,7 @@ button.beep {
 
 /*Progress bar pieces*/
 
-/* line 303, assets/scss/base.scss */
+/* line 306, assets/scss/base.scss */
 
 #perc {
     width: 100%;
@@ -401,7 +408,7 @@ button.beep {
     margin-right: auto;
 }
 
-/* line 310, assets/scss/base.scss */
+/* line 313, assets/scss/base.scss */
 
 #empty {
     background-color: #fafafa;
@@ -411,7 +418,7 @@ button.beep {
     margin-left: auto;
 }
 
-/* line 318, assets/scss/base.scss */
+/* line 321, assets/scss/base.scss */
 
 #bar {
     background-color: #C13833;
@@ -430,21 +437,21 @@ button.beep {
 
 @media (min-width: 588px) {
 
-/* line 159, assets/scss/base.scss */
+/* line 160, assets/scss/base.scss */
 
     .row .column {
         display: table-cell;
         width: 50%;
     }
 
-/* line 198, assets/scss/base.scss */
+/* line 199, assets/scss/base.scss */
 
     .settings .column {
         margin-bottom: 0;
         border-right: 10px solid transparent;
     }
 
-/* line 206, assets/scss/base.scss */
+/* line 207, assets/scss/base.scss */
 
     .settings .column:last-child {
         border-right-width: 0;

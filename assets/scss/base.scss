@@ -48,6 +48,7 @@ legend {
 }
 legend {
 	font-size: 2.2em;
+	font-weight: 700;
 }
 fieldset {
 	border: none;
@@ -144,7 +145,7 @@ button{
 }
 
 #timelabel{
-	font-size:50px;
+	font-size: 5em;
 	font-family:"Lato", sans-serif;
 	
 }
@@ -278,7 +279,9 @@ button{
 	}
 }
 /*Text appears if value is too high or low*/
-
+.help-text {
+	padding-top: 2px;
+}
 #sTxt{ 
 	display:none;
 }

@@ -531,6 +531,7 @@ pom = {
 			// Whether error is currently showing
 			showError = pom.showSessionError,
 			errorID = 'sTxt',
+			errorText = 'Please enter a number between 1 and 120',
 			// Error HTML element
 			error = jQuery(	"#sTxt"),
 			// Whether a session is in progress
@@ -541,6 +542,7 @@ pom = {
 			maxValue = 60;
 			showError = pom.showBreakError;
 			errorID = "bTxt";
+			errorText = 'Please enter a number between 1 and 60';
 			// Whether a break is in progress
 			inProgress = pom.isBreak;
 		}
@@ -551,7 +553,7 @@ pom = {
 		console.log(value);
 		// Invalid number (too big or too small)
 		if (value > maxValue || value < 1) {
-			error.fadeIn("slow");
+			error.html('<p>' + errorText + '</p>').fadeIn("slow");
 			showError = true;
 			field.attr('aria-describedby', errorID);
 			
@@ -568,7 +570,7 @@ pom = {
 		// No error currently but error showing		
 		} else if (showError) {
 			// Hide error
-			error.fadeOut("slow");
+			error.html('').fadeOut("slow");
 			showError = false;
 			field.removeAttr('aria-describedby');
 
